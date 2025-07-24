@@ -57,3 +57,6 @@ pip install -r requirements.txt
 python src/main.py
 ```
 Make sure your webcam is plugged in and accessible.
+
+## Acknowledgments
+This project builds upon concepts from a FreeCodeCamp.org tutorial on hand gesture volume control. The playback control features and modifications are original work.
