@@ -3,3 +3,4 @@ pygame
 mutagen
 numpy
 mediapipe
+RealtimeSTT

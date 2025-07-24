@@ -124,8 +124,10 @@ def process_text(text):
 ####################################################################################################
 
 pygame.mixer.init(frequency=44100)
-folderPath = 'songs'
-songs = [os.path.join(folderPath, song).replace("\\", "/") for song in os.listdir(folderPath)]
+folderPath = '../songs'
+songs = [os.path.join(folderPath, song).replace("\\", "/")
+         for song in os.listdir(folderPath) if song.lower().endswith('.mp3')]
+
 current_song_index = 0
 paused = False
 
@@ -450,7 +452,7 @@ def main():
 		cv2.putText(img, f"FPS: {avg_fps:.1f}", (10, 30), cv2.FONT_HERSHEY_PLAIN, 1, color, 1, lineType=cv2.LINE_AA)
 		cv2.putText(img, f"{songName}",((img.shape[1] - cv2.getTextSize(f"{songName}", cv2.FONT_HERSHEY_PLAIN, 2, 1)[0][0]) // 2, 500),cv2.FONT_HERSHEY_PLAIN, 2, color, 1, lineType=cv2.LINE_AA)
 		
-		songPlaying = MP3('songs/' + current_song + '.mp3')
+		songPlaying = MP3('../songs/' + current_song + '.mp3')
 		songLength = songPlaying.info.length
 		songPlayTime = pygame.mixer.music.get_pos() / 1000
 	
